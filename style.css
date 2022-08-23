@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(BlackBG.jpg);
+  font-family: 'Rubik', bold, sans-serif;
+}
+
+.mainBlock {
+  display: flex;
+  align-items: center;
+  margin-top: 6vh;
+  justify-content: space-around;
+  width: 80vw;
+  height: 100%;
+}
+
+h1 {
+  margin: 10px;
+  color: #e5e5e5;
+  align-self: flex-start;
+}
+
+#cube {
+    
+    width: 36vw;
+    height: 36vw;
+    position: relative;
+    scale: 1;
+    transform-style: preserve-3d;
+    transition: transform 1.5s;
+    
+
+    transform: rotateY(-6deg) rotateX(-6deg);   
+}
+
+
+.spin {
+    animation: spin 1.5s forwards ;
+}
+
+@keyframes spin {
+  0% {
+    scale: 1;
+  }
+  40% {
+    scale: 0.2;
+    
+  }
+  60% {
+    scale: 0.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+
+.face, .top, .bottom, .back, .front, .left, .right {
+    color: #000000;
+    font-family: 'Rubik', bold, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e5e5e5;
+  border: 2px solid #000000;
+  
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(18vw);
+  animation: shift-top 3s infinite ease-out;
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(18vw);
+  animation: shift-bottom 3s infinite ease-out;
+}
+.bottom img {
+    width: 100%;
+}
+.right {
+  transform: rotateY(90deg) translateZ(18vw);
+  animation: shift-right 3s infinite ease-out;
+}
+.left {
+  transform: rotateY(-90deg) translateZ(18vw);
+  animation: shift-left 3s infinite ease-out;
+}
+.front {
+  transform: translateZ(18vw);
+  animation: shift-front 3s infinite ease-out;
+}
+.back {
+  transform: rotateY(-180deg) translateZ(18vw);
+  animation: shift-back 3s infinite ease-out;
+}
+
+.credits {
+  color: #e5e5e5;
+  align-self: flex-end;
+  margin: 20px;
+}
+
+
+
+
